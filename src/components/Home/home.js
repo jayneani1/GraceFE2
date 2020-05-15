@@ -10,9 +10,10 @@ const Home = () => {
     <Router>
     <div className="homePageContainer" style={{color: "#E1D8CE",
   paddingBottom: "100px"}}>
-        <Header />
+        
         <div className="homePage-contentContainer" style={{
     marginTop: '50px',
+    margin: '2% auto',
     color: "#E1D8CE",
     alignItems: "center"}}>
        <a href="/main"><img className="enterImage" style={{margin: "1% auto",

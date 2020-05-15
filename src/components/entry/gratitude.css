@@ -1,5 +1,10 @@
+body {
+          height: 100vh;
+         background-color: #e1d8ce;
+}
+
 .gratitude-background {
-    background-color: #E1D8CE;
+    background-color: #C9B6AC;
     height: 100vh;
 }
 
@@ -9,6 +14,10 @@
     color: #2d393c;
     padding-top: 100px;
 
+}
+
+.gratDescription {
+    color: #C9B6AC;
 }
 
 .gratitude {
@@ -49,19 +58,6 @@
     border-color: #c58870;
     margin: 15px auto;
     box-shadow: 0px 5px 10px rgb(71,71,71)
-}
-
-.submit:hover {
-    box-shadow: inset 0px 0px 36px -9px #c58870;
-    color: white;
-}
-
-.companies-card {
-    display: block;
-    margin: 2% auto;
-    border: none;
-    box-shadow: 0px 0px 36px -9px black;
-    z-index: 1;
 }
 
 .container > .row > .gratitude-card > .card-title {
@@ -110,10 +106,12 @@ p > span {
     flex-direction: column;
     justify-content: center;
     margin-top: -20px;
+    margin-bottom: 10px;
+    padding-bottom: 70px;
     align-items: center;
     text-align: center;
     min-height: 100vh;
-    background-image: linear-gradient(to bottom, #e1d8ce 0%, #c9b6ad 100%);
+    background-image: linear-gradient(to top, #e1d8ce 0%, #c9b6ad 100%);
 }
 
 .create-entry-container {
@@ -164,11 +162,6 @@ p > span {
     align-content: center;
     align-self: center;
     justify-content: center;
-}
-
-.create-entry-form-button:hover {
-    box-shadow: inset 0px 0px 20px -9px grey;
-    opacity: 1;
 }
 
 

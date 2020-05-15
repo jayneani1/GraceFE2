@@ -9,7 +9,7 @@ export default function Description() {
       {
         isMobile ?
           (
-            <div style={{marginTop: '40px', marginBottom: "7%"}}>
+            <div className="gratDescription" style={{marginTop: '40px', marginBottom: "7%"}}>
                 <h3 className="gratitude-description">Sometimes it's the little things</h3>
             </div>
           ) : 
