@@ -19,23 +19,22 @@ export default function CreateEntry(props) {
         Title: "",
         Date: "",
         Summary: "",
-        Mood: "" 
+        Mood: "",
+        is_public: "True",
       })
 
-      useEffect(() => {
-        const callAPI = async () => {
-            const res = await createEntry(universalContext.user)
-        }
-        callAPI()
-      }, [])
+    const [Entry, setEntry] = useState({
+      })
+console.log(Entry)
 
 	const handleSubmit = async (e) => {
         e.preventDefault()
-        const res = await createEntry(newEntry, universalContext.user)
+        const res = await createEntry(newEntry)
         .then(response => {
-            if(response.status === 201){
-                universalContext.entry.push(res)
-                props.history.push('/createentry')
+            if(response.status === 201) {
+                Entry.push(res)
+                setEntry(res)
+                console.log("sup")
                  // works but needs to render on page after submit
             }
         })

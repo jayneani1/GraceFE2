@@ -26,7 +26,7 @@ export const verifyUser = async (user) => {
 
 export const createEntry = async (entry) => {
 	try {
-		return await api.post(`/entries/entries/`, entry);
+		return await api.post(`/entries/create-entry/`, entry);
 	}
 	catch (err) {
 		console.log(err)
