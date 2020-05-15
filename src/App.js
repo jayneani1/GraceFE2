@@ -16,7 +16,7 @@ function App() {
     Date: "",
     Summary: "",
     Mood: "",
-    is_public: "False",
+    is_public: "True",
   });
   let entryPayload = {
     title: newEntry.title,

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import {UniversalContext} from "../../App";
 import { Form, Col, Container, Row } from "react-bootstrap"
 //import { updateUserProfile } from '../../services/api-helper-userProfile'
@@ -13,20 +13,33 @@ import "./gratitude.css"
 import {createEntry} from "../services/api-helper"
 
 
-
 export default function CreateEntry(props) {
-	const universalContext = useContext(UniversalContext);
+    const universalContext = useContext(UniversalContext);
+    const [newEntry, setNewEntry] = useState({
+        Title: "",
+        Date: "",
+        Summary: "",
+        Mood: "" 
+      })
+
+      useEffect(() => {
+        const callAPI = async () => {
+            const res = await createEntry(universalContext.user)
+        }
+        callAPI()
+      }, [])
 
 	const handleSubmit = async (e) => {
-		e.preventDefault();
-		await createEntry(universalContext.entryPayload).then(response => {
-			if (response.status === 201) {
-				props.history.push("/main");
-			}
-		}).catch(error => {
-			return(error);
-		});
-	};
+        e.preventDefault()
+        const res = await createEntry(newEntry, universalContext.user)
+        .then(response => {
+            if(response.status === 201){
+                universalContext.entry.push(res)
+                props.history.push('/createentry')
+                 // works but needs to render on page after submit
+            }
+        })
+    }
 
 	return (
 		<div className="auth-body">
