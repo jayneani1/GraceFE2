@@ -15,6 +15,13 @@
     height: 100vh;
 }
 
+
+@media (min-width: 400px){
+    .homePageContainer{
+        background-color: white;
+    }
+}
+
 .homePage-authContainer{
     margin: 0 auto;
 }

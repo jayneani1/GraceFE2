@@ -15,8 +15,7 @@ export default function Description() {
           ) : 
           (
             <div>
-              <h3 className="gratitude-description">Sometimes it's the little things</h3>
-              <img className="lotus" src="https://cdn0.iconfinder.com/data/icons/flowers-3/450/lotus-512.png"></img>
+              <h3 className="gratitude-description" style={{margin: "40px"}}>Sometimes it's the little things</h3>
             </div>
           )
       }

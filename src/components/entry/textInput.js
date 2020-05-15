@@ -44,7 +44,7 @@ console.log(Entry)
 		<div className="auth-body">
 			<div className="create-entry-wrapper">
 				<div className="create-entry-container">
-					<div className="create-entry"><h1>What are you grateful for?</h1></div>
+					<div className="create-entry"><h1> <img className="lotus" src="https://cdn0.iconfinder.com/data/icons/flowers-3/450/lotus-512.png"></img></h1></div>
 					<form onSubmit={handleSubmit} className="create-entry-form">
 						<input className="create-entry-Input"
 						       type="text"
