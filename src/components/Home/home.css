@@ -40,14 +40,14 @@ p.welcomeHook{
         margin: 25px;
     }
 
-    img {
+    .enterImage {
         height: 85vh;
         margin: 7% auto;
     }
 
 }
 
-img {
+.enterImage {
     height: 85vh;
     margin: 7% auto;
 }

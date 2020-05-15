@@ -19,6 +19,7 @@
     padding-top: 40px;
     height: 100px;
     width: 75px;
+    margin-bottom: 30px;
 }
 
 .gratitude > .form-row > .col > .form-group > input {
@@ -108,7 +109,7 @@ p > span {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: -10px;
+    margin-top: -20px;
     align-items: center;
     text-align: center;
     min-height: 100vh;
