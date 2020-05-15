@@ -13,106 +13,15 @@ import "./gratitude.css"
 import {createEntry} from "../services/api-helper"
 
 
-/* export default function GratitudeForm(){
-    const isDesktop = useMediaQuery({query: "(min-width:1020px)"}) 
-     const sharedStates = useContext(TrackerContext); 
-    const [gratitude, setGratitude] = useState([
-        {
-            Title: "",
-            Date: "",
-            Summary: "",
-            Mood: "",
-        }
-    ])
-    
-    const universalContext = useContext(UniversalContext);
-
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		await createEntry(universalContext.entryPayload, universalContext.userInfo.token).then(response => {
-			if (response.status === 201) {
-				props.history.push("/home");
-			}
-		}).catch(error => {
-			return(error);
-		});
-	};
-    
-
-    return (
-        <>
-            {
-                isDesktop ? 
-                    (
-                        <Form style={{width: "50%", display: "block", margin: "4% auto"}} className="gratitude" onSubmit={handleSubmit}>
-                            <Form.Row>
-                                <Col>
-                                    {<Title gratitude={gratitude} setGratitude={setGratitude} />}
-                                </Col>
-                                <Col>
-                                    <Date gratitude={gratitude} setGratitude={setGratitude} />
-                                </Col>
-                            </Form.Row>
-                            <Form.Row>
-                                <Col>
-                                    <Summary gratitude={gratitude} setGratitude={setGratitude} />
-                                </Col>
-                            </Form.Row>
-                            <Form.Row>
-                                <Col>
-                                    <Mood gratitude={gratitude} setGratitude={setGratitude} />
-                                </Col>
-                                <Col>
-                                <Form.Control className="submit" type="Submit" value="Submit" />
-                                </Col>
-                            </Form.Row>
-                        </Form>
-                    ) : 
-                    (
-                        <Form style={{width: "50%", display: "block", margin: "4% auto"}} className="gratitude" onSubmit={handleSubmit}>
-                        <Form.Row>
-                            <Col>
-                                <Title gratitude={gratitude} setGratitude={setGratitude} /> }
-                            </Col>
-                            <Col>
-                                <Date gratitude={gratitude} setGratitude={setGratitude} />
-                            </Col>
-                        </Form.Row>
-                        <Form.Row>
-                            <Col>
-                                <Summary gratitude={gratitude} setGratitude={setGratitude} />
-                            </Col>
-                        </Form.Row>
-                        <Form.Row>
-                            <Col>
-                                <Mood gratitude={gratitude} setGratitude={setGratitude} />
-                            </Col>
-                            <Col>
-                            <Form.Control className="submit" type="Submit" value="Submit" />
-                            </Col>
-                        </Form.Row>
-                    </Form>
-                    )
-            }
-                        <Container>
-                            <Row>
-                                <Cards handleDelete={handleDelete}/>
-                            </Row>
-                        </Container>
-        </>
-    )
-}  */
-
-
 
 export default function CreateEntry(props) {
 	const universalContext = useContext(UniversalContext);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		await createEntry(universalContext.entryPayload, universalContext.userInfo.token).then(response => {
+		await createEntry(universalContext.entryPayload).then(response => {
 			if (response.status === 201) {
-				props.history.push("/home");
+				props.history.push("/main");
 			}
 		}).catch(error => {
 			return(error);
@@ -143,7 +52,7 @@ export default function CreateEntry(props) {
 						       type="text"
 						       name="mood"
 						       placeholder="MOOD"
-						       value={universalContext.newEntry.Mood}
+						       value={universalContext.newEntry.mood}
 						       onChange={universalContext.handleChange} required
 						/>
 						<textarea className="create-entry-Input"
